@@ -1,0 +1,33 @@
+.weatherDetails{
+   margin: auto;
+    display: block;
+    border-radius: 10px;
+    width: 150px;
+    height: 220px;
+    background: black ;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1));
+    color: white;
+}
+.sun{
+    font-size: 40px;
+     color: yellow; 
+     filter: drop-shadow(1px 10x 10px yellow);
+}
+.moon{
+    font-size: 40px;
+    color: rgb(240, 239, 239);
+    filter: drop-shadow(1px 10x 10px grey);
+}
+.cloudDiv{
+    margin-top: -45px;
+}
+.cloud{
+    font-size: 35px;
+    color: cornflowerblue;
+    filter: drop-shadow(1px 10x 10px cornflowerblue);
+    animation: cloudMovement 10s ease-in-out none infinite alternate;
+}
+@keyframes cloudMovement {
+    from{margin-left: -55px;}
+    to{margin-left: 55px;}
+}

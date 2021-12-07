@@ -1,0 +1,39 @@
+
+    <h3 class="text-center">16 day weather ForeCast: {{weatherdata.city_name}}</h3>
+    <div class="row">
+        <div class="col-md-2" 
+             *ngFor="let day of weatherdata.data; index as id "><!--loops through data in weatherdata-->
+           <div  class="weatherDetails">
+                <div class="text-center" style="font-size: 25px; margin-top: 5px;">{{weatherdata.data[id].day}}</div>
+                <div class="text-center" >{{weatherdata.data[id].valid_date}}</div>
+                   <!--switch between moon and sun--> 
+                <div class="text-center" 
+                    *ngIf="!night" >
+                        <fa-icon 
+                            class="moon"
+                            [icon]="faMoon"></fa-icon>
+                    </div>  
+                    <div *ngIf="night"
+                    class="text-center" >
+                        <fa-icon 
+                            class="sun"
+                            [icon]="faSun"></fa-icon>
+                    </div> 
+                    <div class="text-center cloudDiv" >
+                        <fa-icon 
+                            class="cloud"
+                            [icon]="faCloud"></fa-icon>
+
+                    </div> 
+                    
+                    <div class="text-center" style="font-size: 32px; margin-top: 4px;">{{weatherdata.data[id].temp}}°</div>
+                    <div class="text-center" style="font-size: 12px;">{{weatherdata.data[id].low_temp}} /{{weatherdata.data[id].max_temp}}°</div>
+                    <div class="text-center" style="font-size: 15x;" >{{weatherdata.data[id].weather.description}}</div>
+                    <div class="text-center" style="font-size: 12px;">humidity: {{weatherdata.data[id].rh}}%</div>
+                    
+                  
+                </div>
+        </div>
+      
+    </div>
+
